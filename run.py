@@ -45,18 +45,35 @@ def get_contact_data():
         get_phone_number()
     else:
         print("no error")
+    
+    print('Please enter in which country you are located.')
+    print('Example: Ireland.\n')
+    location_str = input('Enter your location here: ')
+    print(f'The location provided is {location_str}\n')
+
+    print('\nPlease enter your email.')
+    print('Example: phil123@gmail.com.\n')
+    email_str = input('Enter your email here: ')
+    print(f'The email provided is {email_str}\n')
+
 
 def get_name_data():
+    """
+    Get Name and Surname data from the user.
+    """
     name_str = input('Enter your name here: \n')
     print('Validating...')
     if any(x not in ALLOWED_NAME_CHARACTERS for x in name_str):
         print("error: invalid character\n")
-        name_str = input('Enter your name and surname here: \n')
+        get_name_data()
     else:
         print("no error\n")
         print(f'The name {name_str} is validated!')
 
 def get_phone_number():
+    """
+    Get Phone number data from the user.
+    """
     phone_number_str = input('Enter your phone number here: ')
     if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
         print("\nerror: Invalid character, please enter numbers only.")
