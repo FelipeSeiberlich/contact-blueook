@@ -15,6 +15,7 @@ ALLOWED_NAME_CHARACTERS=['a','b','c','d','e','f','g','h','i','j',
     'k','l','m','n','o','p','q','r','s','t','u','v','w','x','y',
     'z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
     'O','P','Q','R','S','T','U','V','W','X','Y','Z',' ']
+ALLOWED_PHONE_CHARACTERS=['1','2','3','4','5','6','7','8','9','0',' ']
 
 
 def get_contact_data():
@@ -29,10 +30,41 @@ def get_contact_data():
     print('Validating...')
     if any(x not in ALLOWED_NAME_CHARACTERS for x in name_str):
         print("error: invalid character\n")
-        get_contact_data()
+        get_name_data()
     else:
         print("no error\n")
         print(f'The name {name_str} is validated!')
+    
+    print('Please enter your Phone Number.')
+    print('Data contains only numbers.\n')
+    print('Example: 00 353 892516666')
+
+    phone_number_str = input('Enter your phone number here: ')
+    if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
+        print("\nerror: Invalid character, please enter numbers only.")
+        get_phone_number()
+    else:
+        print("no error")
+
+def get_name_data():
+    name_str = input('Enter your name here: \n')
+    print('Validating...')
+    if any(x not in ALLOWED_NAME_CHARACTERS for x in name_str):
+        print("error: invalid character\n")
+        name_str = input('Enter your name and surname here: \n')
+    else:
+        print("no error\n")
+        print(f'The name {name_str} is validated!')
+
+def get_phone_number():
+    phone_number_str = input('Enter your phone number here: ')
+    if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
+        print("\nerror: Invalid character, please enter numbers only.")
+        phone_number_str = input('Enter your phone number here: ')
+    else:
+        print("no error")
+
+
 
 get_contact_data()
         
