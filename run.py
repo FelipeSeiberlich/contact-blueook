@@ -56,6 +56,10 @@ def get_contact_data():
     email_str = input('Enter your email here: ')
     print(f'The email provided is {email_str}\n')
 
+    contact_data = (f'{name_str}, {phone_number_str}, {location_str}, {email_str}')
+    data = contact_data.split(',')
+    print(data)
+
 
 def get_name_data():
     """
