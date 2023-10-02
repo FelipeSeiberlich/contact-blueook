@@ -22,38 +22,44 @@ def get_contact_data():
     """
     Get name, phone, location and email contact from the user.
     """
+    print(' ')
     print('Please enter your name and surname.')
-    print('Data should contain only letters.')
+    print('Data must contain only letters.\n')
     print('Example: Philip Grant.\n')
 
     name_str = input('Enter your name here: \n')
-    print('Validating...')
+    print(' ')
+    print('Validating...\n')
     if any(x not in ALLOWED_NAME_CHARACTERS for x in name_str):
-        print("error: invalid character\n")
+        print("Error: invalid character. :(\n")
         get_name_data()
     else:
-        print("no error\n")
-        print(f'The name {name_str} is validated!')
+        print("No error. :)")
+        print(f'The name {name_str} was added successfully!\n')
     
     print('Please enter your Phone Number.')
-    print('Data contains only numbers.\n')
-    print('Example: 00 353 892516666')
+    print('Data must contain only numbers.\n')
+    print('Example: 00 353 892516666\n')
 
-    phone_number_str = input('Enter your phone number here: ')
+    phone_number_str = input('Enter your phone number here: \n')
     if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
-        print("\nerror: Invalid character, please enter numbers only.")
+        print("\nError: Invalid character. :(\n")
         get_phone_number()
     else:
-        print("no error")
+        print(' ')
+        print("No error. :)")
+        print(f'The number {phone_number_str} was added successfully!\n')
     
-    print('Please enter in which country you are located.')
+    print('The country I am located is...?')
     print('Example: Ireland.\n')
-    location_str = input('Enter your location here: ')
-    print(f'The location provided is {location_str}\n')
+    location_str = input('Enter your location here: \n')
+    print(' ')
+    print(f'The location provided is {location_str}.\n')
 
-    print('\nPlease enter your email.')
+    print('Please enter your email.\n')
     print('Example: phil123@gmail.com.\n')
-    email_str = input('Enter your email here: ')
+    email_str = input('Enter your email here: \n')
+    print(' ')
     print(f'The email provided is {email_str}\n')
 
     contact_data = (f'{name_str}, {phone_number_str}, {location_str}, {email_str}')
@@ -66,13 +72,15 @@ def get_name_data():
     Get Name and Surname data from the user.
     """
     name_str = input('Enter your name here: \n')
-    print('Validating...')
+    print(' ')
+    print('Validating...\n')
     if any(x not in ALLOWED_NAME_CHARACTERS for x in name_str):
-        print("error: invalid character\n")
+        print("Error: invalid character\n")
         get_name_data()
     else:
-        print("no error\n")
-        print(f'The name {name_str} is validated!')
+        print("No error. :)\n")
+        print(f'The name {name_str} was added successfully!')
+        print(' ')
 
 def get_phone_number():
     """
@@ -80,12 +88,13 @@ def get_phone_number():
     """
     phone_number_str = input('Enter your phone number here: ')
     if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
-        print("\nerror: Invalid character, please enter numbers only.")
+        print("\nError: Invalid character, please enter numbers only.")
         phone_number_str = input('Enter your phone number here: ')
+        print(' ')
     else:
-        print("no error")
-
-
+        print(' ')
+        print("No error. :)")
+        print(f'The number {phone_number_str} was added successfully!\n')
 
 get_contact_data()
         
