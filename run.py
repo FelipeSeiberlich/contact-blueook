@@ -1,28 +1,23 @@
 import gspread
 from google.oauth2.service_account import Credentials
-
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
     ]
-
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('blueook')
+
 ALLOWED_NAME_CHARACTERS=['a','b','c','d','e','f','g','h','i','j',
     'k','l','m','n','o','p','q','r','s','t','u','v','w','x','y',
     'z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
     'O','P','Q','R','S','T','U','V','W','X','Y','Z',' ']
 ALLOWED_PHONE_CHARACTERS=['1','2','3','4','5','6','7','8','9','0',' ']
-
 contact = SHEET.worksheet('contact')
-
 data = contact.get_all_values()
-
 print(data)
-
 panel = """                                                  
 ### #           ##   #                       #   
  #  # # ###     # #  #  # # ### ### ### # # 
@@ -50,7 +45,6 @@ smurfette = """
           .*(....,/......     
 """
 print(smurfette)
-
 def get_contact_data():
     """
     Get name, phone, location and email contact from the user.
@@ -59,7 +53,6 @@ def get_contact_data():
     print('Please enter your name and surname.')
     print('Data must contain only letters.\n')
     print('Example: Philip Grant.\n')
-
     name_str = input('Enter your name here: \n')
     print(' ')
     print('Validating...\n')
@@ -73,7 +66,6 @@ def get_contact_data():
     print('Please enter your Phone Number.')
     print('Data must contain only numbers.\n')
     print('Example: 00 353 892516666\n')
-
     phone_number_str = input('Enter your phone number here: \n')
     if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
         print("\nError: Invalid character. :(\n")
@@ -88,16 +80,12 @@ def get_contact_data():
     location_str = input('Enter your location here: \n')
     print(' ')
     print(f'The location provided is {location_str}.\n')
-
     print('Please enter your email.\n')
     print('Example: phil123@gmail.com.\n')
     email_str = input('Enter your email here: \n')
     print(' ')
     print(f'The email provided is {email_str}\n')
-
-    contact_data = (f'{name_str}, {phone_number_str}, {location_str}, {email_str}')
-    data = contact_data.split(',')
-
+    
 def get_name_data():
     """
     Get Name and Surname data from the user.
@@ -112,7 +100,6 @@ def get_name_data():
         print("No error. :)\n")
         print(f'The name {name_str} was added successfully!')
         print(' ')
-
 def get_phone_number():
     """
     Get Phone number data from the user.
@@ -126,8 +113,7 @@ def get_phone_number():
         print(' ')
         print("No error. :)")
         print(f'The number {phone_number_str} was added successfully!\n')
-
-def update_contact_worksheet(data):
+def update_contact_worksheet(data, contact):
     """
     Update worksheet with data values, add a new row with the list data provided.
     """
@@ -136,9 +122,10 @@ def update_contact_worksheet(data):
     contact.append_row(data)
     print('Contact worksheet updated successfully!\n')
 
-
+def main():
+    contact_data = (f'{name_str}, {phone_number_str}, {location_str}, {email_str}')
+    data = contact_data.split(',')
+    
 data = get_contact_data()
-update_contact_worksheet(data)
-
-
+update_contact_worksheet(data, contact)
 
