@@ -17,6 +17,39 @@ ALLOWED_NAME_CHARACTERS=['a','b','c','d','e','f','g','h','i','j',
     'O','P','Q','R','S','T','U','V','W','X','Y','Z',' ']
 ALLOWED_PHONE_CHARACTERS=['1','2','3','4','5','6','7','8','9','0',' ']
 
+contact = SHEET.worksheet('contact')
+
+data = contact.get_all_values()
+
+print(data)
+
+panel = """                                                  
+### #           ##   #                       #   
+ #  # # ###     # #  #  # # ### ### ### # # 
+ #  ### ##      ##   #  # # ##  # # # # ##  
+ #  # # ###     # #  ## ### ### ### ### # # 
+ #              ##                               
+"""
+print(panel)
+print('***Welcome to the Smurfs collectors Contact Book***')
+smurfette = """                    
+         **//***     
+          /////    .         
+          (#(    ,,,..         
+          ((/   ,.,. ..          Hi! I am Smurfette. Nice to meet you.
+          /((  ..,,***,,      
+           ((  /*/%%&@#%/        
+           /( /(/  *.& (//,      
+           .((#&(((##(##%(/,,    
+            ((%%%&/%%,%((//**     I will give you some tips about this program...
+           /((%((#/,..,##/*     
+            (#   *,...,/,,##((      This is a contact book for Smurfs lovers!
+            /#  ,*.....,,,    
+            /(    #%  #(          Please follow the instructons below.
+           *((  ##%%(###(.    
+          .*(....,/......     
+"""
+print(smurfette)
 
 def get_contact_data():
     """
@@ -64,8 +97,6 @@ def get_contact_data():
 
     contact_data = (f'{name_str}, {phone_number_str}, {location_str}, {email_str}')
     data = contact_data.split(',')
-    print(data)
-
 
 def get_name_data():
     """
@@ -101,8 +132,8 @@ def update_contact_worksheet(data):
     Update worksheet with data values, add a new row with the list data provided.
     """
     print('Updating contact worksheet...')
-    contact_worksheet = SHEET.worksheet('contact')
-    contact_worksheet.append_row(data)
+    contact = SHEET.worksheet('contact')
+    contact.append_row(data)
     print('Contact worksheet updated successfully!\n')
 
 
