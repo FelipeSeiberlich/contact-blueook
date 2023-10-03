@@ -96,7 +96,18 @@ def get_phone_number():
         print("No error. :)")
         print(f'The number {phone_number_str} was added successfully!\n')
 
-get_contact_data()
-        
+def update_contact_worksheet(data):
+    """
+    Update worksheet with data values, add a new row with the list data provided.
+    """
+    print('Updating contact worksheet...')
+    contact_worksheet = SHEET.worksheet('contact')
+    contact_worksheet.append_row(data)
+    print('Contact worksheet updated successfully!\n')
+
+
+data = get_contact_data()
+update_contact_worksheet(data)
+
 
 
