@@ -15,9 +15,7 @@ ALLOWED_NAME_CHARACTERS=['a','b','c','d','e','f','g','h','i','j',
     'z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
     'O','P','Q','R','S','T','U','V','W','X','Y','Z',' ']
 ALLOWED_PHONE_CHARACTERS=['1','2','3','4','5','6','7','8','9','0',' ']
-contact = SHEET.worksheet('contact')
-data = contact.get_all_values()
-print(data)
+
 panel = """                                                  
 ### #           ##   #                       #   
  #  # # ###     # #  #  # # ### ### ### # # 
@@ -113,7 +111,8 @@ def get_phone_number():
         print(' ')
         print("No error. :)")
         print(f'The number {phone_number_str} was added successfully!\n')
-def update_contact_worksheet(data, contact):
+
+def update_contact_worksheet(data):
     """
     Update worksheet with data values, add a new row with the list data provided.
     """
@@ -121,11 +120,27 @@ def update_contact_worksheet(data, contact):
     contact = SHEET.worksheet('contact')
     contact.append_row(data)
     print('Contact worksheet updated successfully!\n')
+    add_new_entry()
+
+def add_new_entry():
+    new_entry = input('Would you like to add a new collector to the Blueook y/n?')
+    if new_entry == 'y' or new_entry == 'Y':
+        print(' ')
+        get_contact_data()
+        print(' ')
+    else:
+        print(' ')
+        print('Thanks for using The Blueook.')
+        print('See you soon!') 
+
+          
 
 def main():
     contact_data = (f'{name_str}, {phone_number_str}, {location_str}, {email_str}')
     data = contact_data.split(',')
-    
+    add_new_entry()
+
 data = get_contact_data()
-update_contact_worksheet(data, contact)
+update_contact_worksheet(data)
+
 
