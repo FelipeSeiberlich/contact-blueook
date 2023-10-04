@@ -1,5 +1,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import colorama
+from colorama import Fore, Back, Style
+colorama.init()
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -14,34 +17,35 @@ ALLOWED_NAME_CHARACTERS=['a','b','c','d','e','f','g','h','i','j',
     'z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
     'O','P','Q','R','S','T','U','V','W','X','Y','Z',' ']
 ALLOWED_PHONE_CHARACTERS=['1','2','3','4','5','6','7','8','9','0',' ']
-contact = SHEET.worksheet('contact')
-data = contact.get_all_values()
-print(data)
+
 panel = """                                                  
-### #           ##   #                       #   
- #  # # ###     # #  #  # # ### ### ### # # 
- #  ### ##      ##   #  # # ##  # # # # ##  
- #  # # ###     # #  ## ### ### ### ### # # 
- #              ##                               
+   ### #           ##   #                       #   
+    #  # # ###     # #  #  # # ### ### ### # # 
+    #  ### ##      ##   #  # # ##  # # # # ##  
+    #  # # ###     # #  ## ### ### ### ### # # 
+    #              ##                               
 """
+print(Fore.BLUE)
 print(panel)
+print(Fore.YELLOW)
 print('***Welcome to the Smurfs collectors Contact Book***')
+print(Fore.WHITE)
 smurfette = """                    
-         **//***     
-          /////    .         
-          (#(    ,,,..         
-          ((/   ,.,. ..          Hi! I am Smurfette. Nice to meet you.
-          /((  ..,,***,,      
-           ((  /*/%%&@#%/        
-           /( /(/  *.& (//,      
-           .((#&(((##(##%(/,,    
-            ((%%%&/%%,%((//**     I will give you some tips about this program...
-           /((%((#/,..,##/*     
-            (#   *,...,/,,##((      This is a contact book for Smurfs lovers!
-            /#  ,*.....,,,    
-            /(    #%  #(          Please follow the instructons below.
-           *((  ##%%(###(.    
-          .*(....,/......     
+**//***     
+/////    .         
+(#(    ,,,..         
+((/   ,.,. ..               Hi! I am Smurfette. Nice to meet you!
+/((  ..,,***,,      
+((  /*/%%&@#%/        
+/( /(/  *.& (//,       This is a contact book for Smurfs lovers!
+.((#&(((##(##%(/,,    
+((%%%&/%%,%((//**          Please follow the instructons below,
+/((%((#/,..,##/*     
+(#   *,...,/,,##((                      and Blueook yourself...
+/#  ,*.....,,,    
+/(    #%  #(          
+*((  ##%%(###(.    
+.*(....,/......     
 """
 print(smurfette)
 
@@ -49,20 +53,26 @@ def get_contact_data():
     """
     Get name, phone, location and email contact from the user.
     """
-    print(' ')
+    print(Fore.WHITE)
+    print(Style.BRIGHT)
     print('Please enter your name and surname.')
-    print('Data must contain only letters.\n')
-    print('Example: Philip Grant.\n')
+    print('Data must contain only letters.')
+    print(Fore.YELLOW)
+    print('Example: Philip Grant.')
+    print(Fore.WHITE)
     name_str = input('Enter your name here: \n')
     print(' ')
-    print('Validating...\n')
+    print(Fore.BLUE + 'Validating...\n')
     if any(x not in ALLOWED_NAME_CHARACTERS for x in name_str):
-        print("Error: invalid character. :(\n")
+        print(Fore.RED +'Error: invalid character. :(\n')
+        print('Smurfs have only letters in their names.')
+        print(Fore.WHITE)
         get_name_data()
     else:
-        print("No error. :)")
+        print(Fore.GREEN + 'No error. :)')
         print(f'The name {name_str} was added successfully!\n')
-    
+        print(Fore.WHITE)
+
     print('Please enter your Phone Number.')
     print('Data must contain only numbers.\n')
     print('Example: 00 353 892516666\n')
