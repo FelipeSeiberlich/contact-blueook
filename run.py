@@ -9,13 +9,14 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('blueook')
-
 ALLOWED_NAME_CHARACTERS=['a','b','c','d','e','f','g','h','i','j',
     'k','l','m','n','o','p','q','r','s','t','u','v','w','x','y',
     'z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
     'O','P','Q','R','S','T','U','V','W','X','Y','Z',' ']
 ALLOWED_PHONE_CHARACTERS=['1','2','3','4','5','6','7','8','9','0',' ']
-
+contact = SHEET.worksheet('contact')
+data = contact.get_all_values()
+print(data)
 panel = """                                                  
 ### #           ##   #                       #   
  #  # # ###     # #  #  # # ### ### ### # # 
@@ -43,6 +44,7 @@ smurfette = """
           .*(....,/......     
 """
 print(smurfette)
+
 def get_contact_data():
     """
     Get name, phone, location and email contact from the user.
@@ -83,7 +85,7 @@ def get_contact_data():
     email_str = input('Enter your email here: \n')
     print(' ')
     print(f'The email provided is {email_str}\n')
-    
+
 def get_name_data():
     """
     Get Name and Surname data from the user.
@@ -98,6 +100,7 @@ def get_name_data():
         print("No error. :)\n")
         print(f'The name {name_str} was added successfully!')
         print(' ')
+
 def get_phone_number():
     """
     Get Phone number data from the user.
@@ -128,13 +131,12 @@ def add_new_entry():
         print(' ')
         get_contact_data()
         print(' ')
+        update_contact_worksheet(data)
     else:
         print(' ')
         print('Thanks for using The Blueook.')
-        print('See you soon!') 
-
-          
-
+        print('See you soon!')
+ 
 def main():
     contact_data = (f'{name_str}, {phone_number_str}, {location_str}, {email_str}')
     data = contact_data.split(',')
