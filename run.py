@@ -69,12 +69,10 @@ def get_contact_data():
     else:
         print(Fore.GREEN + 'No error. :)')
         print(f'The name {name_str} was added successfully!\n')
-        print(Fore.WHITE)
 
-    print('Please enter your Phone Number.')
+    print(Fore.WHITE + 'Please enter your Phone Number.')
     print('Data must contain only numbers.\n')
-    print(Fore.YELLOW)
-    print('Example: 00 353 892516666\n')
+    print(Fore.YELLOW + 'Example: 00 353 892516666\n')
     print(Fore.WHITE)
     phone_number_str = input('Enter your phone number here: \n')
     print(' ')
@@ -87,23 +85,18 @@ def get_contact_data():
         print(Fore.WHITE)
         get_phone_number()
     else:
-        print(' ')
         print(Fore.GREEN + 'No error. :)')
         print(f'The number {phone_number_str} was added successfully!\n')
         print(Fore.WHITE)
     
     print('In which country are you located?\n')
-    print(Fore.YELLOW)
-    print('Example: Ireland.\n')
+    print(Fore.YELLOW + 'Example: Ireland.\n')
     print(Fore.WHITE)
     location_str = input('Enter your location here: \n')
-    print(' ')
     print(Fore.GREEN)
     print(f'The location provided is {location_str}.\n')
-    print(Fore.WHITE)
-    print('Please enter your email.\n')
-    print(Fore.YELLOW)
-    print('Example: phil123@gmail.com.\n')
+    print(Fore.WHITE + 'Please enter your email.\n')
+    print(Fore.YELLOW + 'Example: phil123@gmail.com.')
     print(Fore.WHITE)
     email_str = input('Enter your email here: \n')
     print(' ')
@@ -136,10 +129,13 @@ def get_phone_number():
     """
     Get Phone number data from the user.
     """
-    phone_number_str = input('Enter your phone number here: ')
+    phone_number_str = input(Fore.WHITE + 'Enter your phone number here: \n')
+    print(Fore.BLUE)
+    print('Validating...\n')
     if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
-        print("\nError: Invalid character, please enter numbers only.")
-        phone_number_str = input('Enter your phone number here: ')
+        print(Fore.RED + "Error: Invalid character, please enter numbers only.")
+        print(Fore.WHITE)
+        get_phone_number()
         print(' ')
     else:
         print(' ')
@@ -152,8 +148,7 @@ def update_contact_worksheet(data):
     """
     Update worksheet with data values, add a new row with the list data provided.
     """
-    print(Fore.BLUE)
-    print('Updating contact worksheet...')
+    print(Fore.BLUE + 'Updating contact worksheet...')
     contact = SHEET.worksheet('contact')
     contact.append_row(data)
     print('Contact worksheet updated successfully!\n')
@@ -161,8 +156,7 @@ def update_contact_worksheet(data):
     add_new_entry()
 
 def add_new_entry():
-    print(Fore.WHITE)
-    new_entry = input('Would you like to add a new collector to the Blueook? y/n: ')
+    new_entry = input(Fore.WHITE + 'Would you like to add a new collector to the Blueook? y/n: \n')
     if new_entry == 'y' or new_entry == 'Y':
         print(' ')
         get_contact_data()
