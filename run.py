@@ -145,7 +145,7 @@ def get_phone_number():
         print(f'The number {phone_number_str} was added successfully!\n')
         print(Fore.WHITE)
 
-    def update_contact_worksheet(data):
+def update_contact_worksheet(data):
     """
     Update worksheet with data values, add a new row with the list data provided.
     """
@@ -163,7 +163,6 @@ def add_new_entry():
         print(' ')
         get_contact_data()
         print(' ')
-        update_contact_worksheet(data)
     else:
         israel = """
 :+**##:                     
