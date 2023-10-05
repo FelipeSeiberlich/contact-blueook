@@ -16,7 +16,9 @@ created in 1958 by Belgian cartoonist Pierre Culliford, better known by his pen 
 Every year an international fairs take place in Belgium and this is a great opportunity for collectors to know each other.
 That's when The Blueook system was envisioned. I idealized a way to get as many contacts as possible to facilitate the network between collectors.
  
-At this first stage of the project the system provide an imput data to storage the collector's contact into a spreadsheet. In the beginning of the program the user is greeted by one of the Smurfs charactor caaled Smurfette. She explains the usability of the program and advise the user to follow the instructions ahead. 
+At this first stage of the project the system provide an imput data to storage the collector's contact into a spreadsheet. In the beginning of the program the user is greeted by one of the Smurfs charactor caaled Smurfette. She explains the usability of the program and advise the user to follow the instructions ahead.
+
+![screenshot](assets/documentation//greeting.png)
 
 ## Summary
 

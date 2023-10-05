@@ -103,6 +103,7 @@ def get_contact_data():
     print(Fore.GREEN)
     print(f'The email provided is {email_str}\n')
     print(Fore.WHITE)
+    return [name_str, phone_number_str, location_str, email_str]
 
 def get_name_data():
     """
@@ -144,7 +145,7 @@ def get_phone_number():
         print(f'The number {phone_number_str} was added successfully!\n')
         print(Fore.WHITE)
 
-def update_contact_worksheet(data):
+
     """
     Update worksheet with data values, add a new row with the list data provided.
     """
@@ -153,6 +154,7 @@ def update_contact_worksheet(data):
     contact.append_row(data)
     print('Contact worksheet updated successfully!\n')
     print(Fore.WHITE)
+    print(data)
     add_new_entry()
 
 def add_new_entry():
@@ -182,11 +184,12 @@ def add_new_entry():
         print('See you soon!\n')
  
 def main():
-    contact_data = (f'{name_str}, {phone_number_str}, {location_str}, {email_str}')
-    data = contact_data.split(',')
-    add_new_entry()
+    data = get_contact_data()
+    update_contact_worksheet(data)
+    print(data)
+    add_new_entry(contact_data)
+    
 
-data = get_contact_data()
-update_contact_worksheet(data)
+main()
 
 
