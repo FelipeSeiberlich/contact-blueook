@@ -29,29 +29,71 @@ panel = """
 print(Fore.BLUE, panel)
 print(Fore.YELLOW + '     ***Welcome to the Smurf collectors Contact Book***')
 print(Fore.WHITE)
-smurfette = """                    
-**//***     
-/////    .         
-(#(    ,,,..         
-((/   ,.,. ..         Hi! I am Smurfette. Nice to meet you! 
-/((  ..,,***,,          
-((  /*/%%&@#%/        
-/( /(/  *.& (//,      This is a contact book for Smurf lovers!
-.((#&(((##(##%(/,,    
-((%%%&/%%,%((//**          Please follow the instructons below,
-/((%((#/,..,##/*     
-(#   *,...,/,,##((                     and Blueook yourself...
-/#  ,*.....,,,    
-/(    #%  #(          
-*((  ##%%(###(.    
-.*(....,/......  Smurfette.
-"""
-print(smurfette)
+
+def important_message():
+    print('                      IMPORTANT\n')
+    print('As this is a public dataset we require your consent to share')
+    print('your contact details with other members of The Blueook Community.\n')
+    print('You have a choice between phone number or email to share. :)\n')
+    print(Fore.BLUE + 'Please remember to be polite and respectful to all our members.\n')
+    important = input(Fore.YELLOW + 'I hereby consent to sharing my contact details on The Blueook system. y/n: \n')
+    print(' ')
+    if important == 'y' or important == 'Y':
+        print(' ')
+
+    else:
+        israel = """
+:+**##:                     
+   .  :#=                      
+       +#.         .          
+       .*=        .==.     .  
+        ==+=-.    ==*+===+*:  
+       :+##****+=+====**++-   
+     -*+##*****###- ..*=::=   
+    .***#+=++*++*#+:.-=...    
+    +#**.        =*#*+*:      
+    -*#*:         :+***:   Azriel 
+        """
+        print(Fore.RED)
+        print(israel)
+        print(Fore.BLUE)
+        print('We appreciated your visit.')
+        print('You will be always welcome!\n')
+        print(Fore.WHITE)
+        
 
 def get_contact_data():
     """
     Get name, phone, location and email contact from the user.
     """
+    panel = """                                                  
+        ### #           ##   #                       #   
+         #  # # ###     # #  #  # # ### ### ### # # 
+         #  ### ##      ##   #  # # ##  # # # # ##  
+         #  # # ###     # #  ## ### ### ### ### # # 
+         #              ##                               
+    """
+    print(Fore.BLUE, panel)
+    print(Fore.YELLOW + '     ***Welcome to the Smurf collectors Contact Book***')
+    print(Fore.WHITE)
+    smurfette = """                    
+**//***     
+  /////    .         
+  (#(    ,,,..         
+  ((/   ,.,. ..         Hi! I am Smurfette. Nice to meet you! 
+  /((  ..,,***,,          
+  ((  /*/%%&@#%/        
+  /( /(/  *.& (//,      This is a contact book for Smurf lovers!
+  .((#&(((##(##%(/,,    
+  ((%%%&/%%,%((//**          Please follow the instructons below,
+  /((%((#/,..,##/*     
+  (#   *,...,/,,##((                     and Blueook yourself...
+ /#  ,*.....,,,    
+/(    #%  #(          
+*((  ##%%(###(.    
+.*(....,/......  Smurfette.
+"""
+    print(smurfette)
     print(Fore.WHITE, Style.BRIGHT)
     print('Please enter your name and surname.')
     print('Data must contain only letters.')
@@ -92,8 +134,7 @@ def get_contact_data():
     
     print('In which country are you located?\n')
     print(Fore.YELLOW + 'Example: Ireland.\n')
-    print(Fore.WHITE)
-    location_str = input('Enter your location here: \n')
+    location_str = input(Fore.WHITE + 'Enter your location here: \n')
     print(Fore.GREEN)
     print(f'The location provided is {location_str}.\n')
     print(Fore.WHITE + 'Please enter your email.\n')
@@ -232,6 +273,7 @@ def exit_blueook():
 
 
 def main():
+    important_message()
     data = get_contact_data()
     update_contact_worksheet(data)
     display_data()
