@@ -1,7 +1,7 @@
 # The Blueook
-**Welcome to the Blueook system!**
+**Welcome to The Blueook system!**
 
-This system grants user input and displays recommendations on what should be done to be connected with a large worldwide community of Smurf's lovers.
+This system grants user input and displays recommendations on what should be done to be connected with a large and worldwide community of Smurf's lovers.
 It is a modest system, but provide the users a contact list of other collectors who share the same passion - Smurfs!
 
 pic of the system

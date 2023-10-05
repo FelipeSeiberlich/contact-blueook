@@ -163,7 +163,20 @@ def add_new_entry():
         print(' ')
         update_contact_worksheet(data)
     else:
-        print(' ')
+        israel = """
+:+**##:                     
+   .  :#=                      
+       +#.         .          
+       .*=        .==.     .  
+        ==+=-.    ==*+===+*:  
+       :+##****+=+====**++-   
+     -*+##*****###- ..*=::=   
+    .***#+=++*++*#+:.-=...    
+    +#**.        =*#*+*:      
+    -*#*:         :+***:   Israel 
+        """
+        print(Fore.RED)
+        print(israel)
         print(Fore.BLUE)
         print('Thanks for using The Blueook.')
         print('See you soon!\n')
