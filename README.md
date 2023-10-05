@@ -34,17 +34,29 @@ The Blueook system would like to be able to:
 ## Features
 **Input name**
 
+User is requested to input name and surname using only letters.
+If any other characters are used an error message will be displayed and a new request will be made until the user insert valid characters.
+
 **Input phone number**
+
+User is requested to input phone numbers using only numbers.
+If any other characters are used an error message will be displayed and a new request will be made until valid characters are inserted.
 
 **Input location**
 
+User is requested to input in which country resides.
+
 **Input email**
+
+User is requested to input email contact.
+
+**Confirming user input is correct**
+
+Input name and phone number are both confirmed by the program if they are following the rules estipulated.
 
 **Data validation**
 
-**Input name**
-
-**Confirming user input is correct**
+The inputed data is validated and inserted into a list to be transfered to the worksheet.
 
 **Enter a new contact or exit**
 
@@ -128,5 +140,4 @@ To check that your `creds.json` file won't be committed, follow the below steps:
   * W3Schools for zipping the sales and booking data
 * Acknowledgements
   * My mentor Rahul for his ongoing support and feedback
-  * The Code Institute’s Tutor Support
   * The Slack community

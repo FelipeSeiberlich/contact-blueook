@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import colorama
 from colorama import Fore, Back, Style
+from tabulate import tabulate
 colorama.init()
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -155,14 +156,14 @@ def update_contact_worksheet(data):
     print('Contact worksheet updated successfully!\n')
     print(Fore.WHITE)
     print(data)
-    add_new_entry()
+    display_data()
 
-def add_new_entry():
-    new_entry = input(Fore.WHITE + 'Would you like to add a new collector to the Blueook? y/n: \n')
-    if new_entry == 'y' or new_entry == 'Y':
-        print(' ')
-        get_contact_data()
-        print(' ')
+def display_data():
+    display_contact = input(Fore.WHITE + 'Would you like to display the collectors contact list? y/n: \n')
+    if display_contact == 'y' or display_contact == 'Y':
+        contact = SHEET.worksheet('contact')
+        data = contact.get_all_values()
+        print(tabulate(data, tablefmt='fancy_grid'))
     else:
         israel = """
 :+**##:                     
@@ -181,12 +182,13 @@ def add_new_entry():
         print(Fore.BLUE)
         print('Thanks for using The Blueook.')
         print('See you soon!\n')
+        print(Fore.WHITE)
  
 def main():
     data = get_contact_data()
     update_contact_worksheet(data)
     print(data)
-    add_new_entry(contact_data)
+    display_data()
     
 
 main()
