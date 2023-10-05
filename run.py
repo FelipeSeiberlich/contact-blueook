@@ -27,7 +27,7 @@ panel = """
          #              ##                               
 """
 print(Fore.BLUE, panel)
-print(Fore.YELLOW + '     ***Welcome to the Smurfs collectors Contact Book***')
+print(Fore.YELLOW + '     ***Welcome to the Smurf collectors Contact Book***')
 print(Fore.WHITE)
 smurfette = """                    
 **//***     
@@ -36,7 +36,7 @@ smurfette = """
 ((/   ,.,. ..         Hi! I am Smurfette. Nice to meet you! 
 /((  ..,,***,,          
 ((  /*/%%&@#%/        
-/( /(/  *.& (//,      This is a contact book for Smurfs lovers!
+/( /(/  *.& (//,      This is a contact book for Smurf lovers!
 .((#&(((##(##%(/,,    
 ((%%%&/%%,%((//**          Please follow the instructons below,
 /((%((#/,..,##/*     
@@ -64,7 +64,7 @@ def get_contact_data():
     if any(x not in ALLOWED_NAME_CHARACTERS for x in name_str):
         print(Fore.RED +'Error: invalid character. :(\n')
         print('Oooops! I will tell Papa Smurf that you did not follow the instructions.\n')
-        print(Fore.GREEN + 'This time use only letters. :)')
+        print(Fore.GREEN + 'This time only use letters. :)')
         print(Fore.WHITE)
         get_name_data()
     else:
@@ -80,7 +80,7 @@ def get_contact_data():
     print(Fore.BLUE + 'Validating...\n')
     if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
         print(Fore.RED + '\nError: Invalid character. :(\n')
-        print('Israel just managed to Blueook himself.')
+        print('Azriel just managed to Blueook himself.')
         print(Fore.GREEN)
         print('You can do it! This time use only numbers. :)')
         print(Fore.WHITE)
@@ -160,7 +160,7 @@ def update_contact_worksheet(data):
    =*##**++++===++*#**##=.    
  :*###***++++=====+*****=:.     If you want to connect with other
 .*####***++++++====++*++++:     collectors around the world, please
-.*#####*****++++++++++====:::   display their contacts below.
+.*#####*****++++++++++====:::   access their contacts below.
  .=**#####****++++++***=  -==.
     ##***++==---:::.:**-      
     ##**++=--::::::.:=*+:     
@@ -192,7 +192,7 @@ def display_data():
      -*+##*****###- ..*=::=   
     .***#+=++*++*#+:.-=...    
     +#**.        =*#*+*:      
-    -*#*:         :+***:   Israel 
+    -*#*:         :+***:   Azriel 
         """
         print(Fore.RED)
         print(israel)
@@ -215,7 +215,7 @@ def exit_blueook():
      -*+##*****###- ..*=::=   
     .***#+=++*++*#+:.-=...    
     +#**.        =*#*+*:      
-    -*#*:         :+***:   Israel 
+    -*#*:         :+***:   Azriel 
         """
         print(Fore.RED)
         print(israel)
@@ -224,8 +224,8 @@ def exit_blueook():
         print('See you soon!\n')
         print(Fore.WHITE)
     else:
-        print(Fore.RED + 'If you want to add a new contact, you need exit and re-start the program.\n')
-        print(Fore.GREEN + 'If you want to display one more time the contact list, type y or Y below.\n')
+        print(Fore.RED + 'If you want to add a new contact then please exit and re-start the program.\n')
+        print(Fore.GREEN + 'If you want to access the contact list one more time type y or Y below.\n')
         print(Fore.WHITE + 'If you want to exit The blueook type n or N below.\n')
         display_data()
 

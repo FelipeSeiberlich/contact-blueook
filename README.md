@@ -13,10 +13,10 @@ pic of the system
 We find passionate collectors of these little blue creatures all around the world. The Smurfs were 
 created in 1958 by Belgian cartoonist Pierre Culliford, better known by his pen name "Peyo” who was born in Brussels on 25th June 1928. The original Smurf comics were published in French and later translated into Dutch, English, German, and Spanish.
  
-Every year an international fairs take place in Belgium and this is a great opportunity for collectors to know each other.
-That's when The Blueook system was envisioned. I idealized a way to get as many contacts as possible to facilitate the network between collectors.
+Every year international fairs take place in Belgium and other countries and this is a great opportunity for collectors to get to know each other.
+That's where The Blueook system was first envisioned. A simple way to build a network of collectors to share information on their collections.  
  
-At this first stage of the project the system provide an imput data to storage the collector's contact into a spreadsheet. In the beginning of the program the user is greeted by one of the Smurfs charactor caaled Smurfette. She explains the usability of the program and advise the user to follow the instructions ahead.
+At this first stage of the project the system provide an input data to store the collector's contact into a spreadsheet. In the beginning of the program the user is greeted by one of the Smurf characters called Smurfette. She explains the usability of the program and advises the user to follow the instructions that follow.
 
 ![screenshot](assets/documentation//greeting.png)
 
@@ -29,30 +29,30 @@ The Blueook system would like to be able to:
 1. Input users email.
 1. Check if data inputted is valid.
 1. Upload data inputted into a Google sheet.
-1. Have access to the Google sheet inputted data.
+1. Have access to the data inputted on the Google sheet.
 
 ## Features
 **Input name**
 
-User is requested to input name and surname using only letters.
-If any other characters are used an error message will be displayed and a new request will be made until the user insert valid characters.
+The user is requested to input their name and surname using only letters.
+If any other characters are used an error message will be displayed and a new request will be made until only valid characters are inserted.
 
 **Input phone number**
 
-User is requested to input phone numbers using only numbers.
-If any other characters are used an error message will be displayed and a new request will be made until valid characters are inserted.
+The User is requested to input phone numbers using only numbers.
+If any other characters are used an error message will be displayed and a new request will be made until only valid characters are inserted.
 
 **Input location**
 
-User is requested to input in which country resides.
+The user is requested to input in which country they reside.
 
 **Input email**
 
-User is requested to input email contact.
+The user is requested to input their email contact.
 
 **Confirming user input is correct**
 
-Input name and phone number are both confirmed by the program if they are following the rules estipulated.
+Input name and phone number are both confirmed by the program if they are following the rules stipulated.
 
 **Data validation**
 
