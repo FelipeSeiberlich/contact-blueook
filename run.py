@@ -44,7 +44,7 @@ smurfette = """
 /#  ,*.....,,,    
 /(    #%  #(          
 *((  ##%%(###(.    
-.*(....,/......  
+.*(....,/......  Smurfette.
 """
 print(smurfette)
 
@@ -150,16 +150,33 @@ def update_contact_worksheet(data):
     """
     Update worksheet with data values, add a new row with the list data provided.
     """
+    house = """
+ .::.              
+           =+=---:            
+   -*=    +*+=--:-:           
+    *-  .+*+===---=  ...        Welcome home...
+    +-.-**++===--+******:       
+   :*+****+++====+******+.      Now you are part of a select group!
+   =*##**++++===++*#**##=.    
+ :*###***++++=====+*****=:.     If you want to connect with other
+.*####***++++++====++*++++:     collectors around the world, please
+.*#####*****++++++++++====:::   display their contacts below.
+ .=**#####****++++++***=  -==.
+    ##***++==---:::.:**-      
+    ##**++=--::::::.:=*+:     
+   ++****+==-------::---.  Mushroom house. 
+    """
     print(Fore.BLUE + 'Updating contact worksheet...')
     contact = SHEET.worksheet('contact')
     contact.append_row(data)
     print('Contact worksheet updated successfully!\n')
     print(Fore.WHITE)
-    print(data)
-    display_data()
+    print(house)
+    print(' ')
 
 def display_data():
     display_contact = input(Fore.WHITE + 'Would you like to display the collectors contact list? y/n: \n')
+    print(' ')
     if display_contact == 'y' or display_contact == 'Y':
         contact = SHEET.worksheet('contact')
         data = contact.get_all_values()
@@ -183,12 +200,42 @@ def display_data():
         print('Thanks for using The Blueook.')
         print('See you soon!\n')
         print(Fore.WHITE)
- 
+
+def exit_blueook():
+    bye_blueook = input(Fore.WHITE + 'Would you like to exit The Blueook? y/n: \n')
+    print(' ')
+    if bye_blueook == 'y' or bye_blueook == 'Y':
+        israel = """
+:+**##:                     
+   .  :#=                      
+       +#.         .          
+       .*=        .==.     .  
+        ==+=-.    ==*+===+*:  
+       :+##****+=+====**++-   
+     -*+##*****###- ..*=::=   
+    .***#+=++*++*#+:.-=...    
+    +#**.        =*#*+*:      
+    -*#*:         :+***:   Israel 
+        """
+        print(Fore.RED)
+        print(israel)
+        print(Fore.BLUE)
+        print('Thanks for using The Blueook.')
+        print('See you soon!\n')
+        print(Fore.WHITE)
+    else:
+        print(Fore.RED + 'If you want to add a new contact, you need exit and re-start the program.\n')
+        print(Fore.GREEN + 'If you want to display one more time the contact list, type y or Y below.\n')
+        print(Fore.WHITE + 'If you want to exit The blueook type n or N below.\n')
+        display_data()
+
+
+
 def main():
     data = get_contact_data()
     update_contact_worksheet(data)
-    print(data)
     display_data()
+    exit_blueook()
     
 
 main()
