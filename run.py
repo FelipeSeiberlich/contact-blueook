@@ -34,14 +34,16 @@ def important_message():
     print('                      IMPORTANT\n')
     print('As this is a public dataset we require your consent to share')
     print('your contact details with other members of The Blueook Community.\n')
-    print('You have a choice between phone number or email to share. :)\n')
-    print(Fore.BLUE + 'Please remember to be polite and respectful to all our members.\n')
+    print('You have a choice between sharing your phone number or email. :)\n')
+    print('Please remember to be polite and respectful to all our members.\n')
     important = input(Fore.YELLOW + 'I hereby consent to sharing my contact details on The Blueook system. y/n: \n')
     print(' ')
     if important == 'y' or important == 'Y':
         print(' ')
 
-    else:
+    elif important == 'n' or important == 'N':
+        print(Fore.WHITE + 'Hi! My name is Azriel and I am a Blueook member.')
+        print('I decided to share only my email and now I am part of this community.')          
         israel = """
 :+**##:                     
    .  :#=                      
@@ -56,11 +58,25 @@ def important_message():
         """
         print(Fore.RED)
         print(israel)
-        print(Fore.BLUE)
-        print('We appreciated your visit.')
-        print('You will be always welcome!\n')
         print(Fore.WHITE)
-        
+        print('We appreciated your visit.')
+        print('You will always be welcome!\n')
+        exit_program()
+    else:
+        panel = """                                                  
+        ### #           ##   #                       #   
+         #  # # ###     # #  #  # # ### ### ### # # 
+         #  ### ##      ##   #  # # ##  # # # # ##  
+         #  # # ###     # #  ## ### ### ### ### # # 
+         #              ##                               
+"""
+        print(Fore.BLUE, panel)
+        print(Fore.WHITE)
+        print('Ooops! Not quite right.\n')
+        print(Fore.GREEN + 'If you want to say YES type "y".')
+        print(Fore.RED + 'If you want to say NO type "n".')
+        print(Fore.WHITE)
+        main()
 
 def get_contact_data():
     """
@@ -112,12 +128,13 @@ def get_contact_data():
     else:
         print(Fore.GREEN + 'No error. :)')
         print(f'The name {name_str} was added successfully!\n')
-
     print(Fore.WHITE + 'Please enter your Phone Number.')
     print('Data must contain only numbers.\n')
     print(Fore.YELLOW + 'Example: 00 353 892516666\n')
-    print(Fore.WHITE)
-    phone_number_str = input('Enter your phone number here: \n')
+    print(Fore.RED + 'If you do not want to share your phone number.')
+    print(Fore.WHITE + 'Enter a single zero "0".\n')
+    print(Fore.YELLOW + 'Example: 0\n')
+    phone_number_str = input(Fore.WHITE + 'Enter your phone number here: \n')
     print(' ')
     print(Fore.BLUE + 'Validating...\n')
     if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
@@ -131,7 +148,6 @@ def get_contact_data():
         print(Fore.GREEN + 'No error. :)')
         print(f'The number {phone_number_str} was added successfully!\n')
         print(Fore.WHITE)
-    
     print('In which country are you located?\n')
     print(Fore.YELLOW + 'Example: Ireland.\n')
     location_str = input(Fore.WHITE + 'Enter your location here: \n')
@@ -265,11 +281,13 @@ def exit_blueook():
         print('See you soon!\n')
         print(Fore.WHITE)
     else:
-        print(Fore.RED + 'If you want to add a new contact then please exit and re-start the program.\n')
-        print(Fore.GREEN + 'If you want to access the contact list one more time type y or Y below.\n')
-        print(Fore.WHITE + 'If you want to exit The blueook type n or N below.\n')
+        print(Fore.GREEN + 'If you want to add a new contact then please exit and re-start the program.\n')
+        print(Fore.BLUE + 'If you want to access the contact list one more time type "y" or "Y" below.\n')
+        print(Fore.RED + 'If you want to exit The blueook type "n" or "N" below.\n')
         display_data()
 
+def exit_program():
+    exit(0)
 
 
 def main():
@@ -278,8 +296,8 @@ def main():
     update_contact_worksheet(data)
     display_data()
     exit_blueook()
+    exit(0)
     
-
 main()
 
 
