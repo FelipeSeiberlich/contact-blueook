@@ -60,7 +60,7 @@ def important_message():
         print(israel)
         print(Fore.WHITE)
         print('We appreciated your visit.')
-        print('You will always be welcome!\n')
+        print('We hope to see you again!\n')
         exit_program()
     else:
         panel = """                                                  
@@ -114,9 +114,9 @@ def get_contact_data():
     print('Please enter your name and surname.')
     print('Data must contain only letters.')
     print(Fore.YELLOW)
-    print('Example: Philip Grant.')
-    print(Fore.WHITE)
-    name_str = input('Enter your name here: \n')
+    print('Example: Philip Grant.\n')
+    print(Fore.CYAN + '--------------------------------------------------------------S2')
+    name_str = input(Fore.WHITE + 'Enter your name here: \n')
     print(' ')
     print(Fore.BLUE + 'Validating...\n')
     if any(x not in ALLOWED_NAME_CHARACTERS for x in name_str):
@@ -128,12 +128,14 @@ def get_contact_data():
     else:
         print(Fore.GREEN + 'No error. :)')
         print(f'The name {name_str} was added successfully!\n')
+    print(Fore.CYAN + '--------------------------------------------------------------S2')    
     print(Fore.WHITE + 'Please enter your Phone Number.')
     print('Data must contain only numbers.\n')
     print(Fore.YELLOW + 'Example: 00 353 892516666\n')
     print(Fore.RED + 'If you do not want to share your phone number.')
     print(Fore.WHITE + 'Enter a single zero "0".\n')
     print(Fore.YELLOW + 'Example: 0\n')
+    print(Fore.CYAN + '--------------------------------------------------------------S2')
     phone_number_str = input(Fore.WHITE + 'Enter your phone number here: \n')
     print(' ')
     print(Fore.BLUE + 'Validating...\n')
@@ -148,15 +150,16 @@ def get_contact_data():
         print(Fore.GREEN + 'No error. :)')
         print(f'The number {phone_number_str} was added successfully!\n')
         print(Fore.WHITE)
-    print('In which country are you located?\n')
+    print(Fore.CYAN + '--------------------------------------------------------------S2')    
+    print(Fore.WHITE + 'In which country are you located?\n')
     print(Fore.YELLOW + 'Example: Ireland.\n')
     location_str = input(Fore.WHITE + 'Enter your location here: \n')
     print(Fore.GREEN)
     print(f'The location provided is {location_str}.\n')
+    print(Fore.CYAN + '--------------------------------------------------------------S2')
     print(Fore.WHITE + 'Please enter your email.\n')
-    print(Fore.YELLOW + 'Example: phil123@gmail.com.')
-    print(Fore.WHITE)
-    email_str = input('Enter your email here: \n')
+    print(Fore.YELLOW + 'Example: phil123@gmail.com.\n')
+    email_str = input(Fore.WHITE + 'Enter your email here: \n')
     print(' ')
     print(Fore.GREEN)
     print(f'The email provided is {email_str}\n')
@@ -232,6 +235,7 @@ def update_contact_worksheet(data):
     print(' ')
 
 def display_data():
+    print(Fore.CYAN + '--------------------------------------------------------------S2')
     display_contact = input(Fore.WHITE + 'Would you like to display the collectors contact list? y/n: \n')
     print(' ')
     if display_contact == 'y' or display_contact == 'Y':
@@ -259,6 +263,8 @@ def display_data():
         print(Fore.WHITE)
 
 def exit_blueook():
+    print(' ')
+    print(Fore.CYAN + '--------------------------------------------------------------S2')
     bye_blueook = input(Fore.WHITE + 'Would you like to exit The Blueook? y/n: \n')
     print(' ')
     if bye_blueook == 'y' or bye_blueook == 'Y':

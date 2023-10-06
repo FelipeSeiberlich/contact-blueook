@@ -14,7 +14,15 @@ We find passionate collectors of these little blue creatures all around the worl
 created in 1958 by Belgian cartoonist Pierre Culliford, better known by his pen name "Peyo” who was born in Brussels on 25th June 1928. The original Smurf comics were published in French and later translated into Dutch, English, German, and Spanish.
  
 Every year international fairs take place in Belgium and other countries and this is a great opportunity for collectors to get to know each other.
-That's where The Blueook system was first envisioned. A simple way to build a network of collectors to share information on their collections.  
+That's where The Blueook system was first envisioned. A simple way to build a network of collectors to share information on their collections.
+
+As someone's personal details are considered sensitive data, the program starts with an important message asking permission for the user to share their details with other members.
+
+![screenshot](assets/documentation//important.png)
+
+If the user do not consent sharing their contact the program exit.
+
+![screenshot](assets/documentation//no_consent.png)
  
 At this first stage of the project the system provide an input data to store the collector's contact into a spreadsheet. In the beginning of the program the user is greeted by one of the Smurf characters called Smurfette. She explains the usability of the program and advises the user to follow the instructions that follow.
 
@@ -36,46 +44,70 @@ The Blueook system would like to be able to:
 
 The user is requested to input their name and surname using only letters.
 If any other characters are used an error message will be displayed and a new request will be made until only valid characters are inserted.
+![screenshot](assets/documentation//enter_name.png)
 
 **Input phone number**
 
 The User is requested to input phone numbers using only numbers.
 If any other characters are used an error message will be displayed and a new request will be made until only valid characters are inserted.
 
+![screenshot](assets/documentation//enter_phone.png)
+
 **Input location**
 
 The user is requested to input in which country they reside.
+
+![screenshot](assets/documentation//enter_location.png)
 
 **Input email**
 
 The user is requested to input their email contact.
 
+![screenshot](assets/documentation//enter_email.png)
+
 **Confirming user input is correct**
 
 Input name and phone number are both confirmed by the program if they are following the rules stipulated.
+
+![screenshot](assets/documentation//name_validated.png)
+
+![screenshot](assets/documentation//phone_validated.png)
 
 **Data validation**
 
 The inputed data is validated and inserted into a list to be transfered to the worksheet.
 
-**Enter a new contact or exit**
+![screenshot](assets/documentation//worksheet_updated.png)
+
+**Display Contact List or exit**
+
+![screenshot](assets/documentation//display.png)
 
 ## The Blueook Google Worksheet View
 
+![screenshot](assets/documentation//display_contact.png)
+
 ## Future Features
 
+1. Confirming if user input for location and email are correct.
+1. 
+
 ## Testing
+
+To ensure there were no bugs in the interface and that the system could handle incorrect user input. Many tests were conducted to cover all bases.
 
 ## Validator testing
 
 ## Bugs and Solutions
+
+There are no remaining bugs that I am aware of.
 
 ## Google API Setup
 The value of using the Google API Sheets library is that it's built on HTTP and JSON, so any standard HTTP client can send requests to it and parse the responses. In other words, our project can feed data to the Google Sheet using an API and we can see the result of that data in a format suitable for Google Sheets. It's also not just used for Python, the Google API client libraies provide better language integration, improved security and support for making calls that require user authorisation. The client libraries are available in a number of programming languages. To get set up with a Google Sheet's API, you will need to select which language your project is for and then following the installation steps online.
 
 The reason for using Google Sheets for this project is so that the NDoS and other permitted users could view past and current data inputted and be able to make insightful, data-driven decisions on what actions they should take for each salon. Using Google Sheets, meant that we could leverage formulas and highlight cells that were not equal to or greater than the city's target ABV. This added ability allows for instant clarity on what city is performing well or not, which the python program alone is not the best way to display such data. Using Google Sheets also allows the NDoS to share the file to the Regional Managers, in a read-only format, so they can understand how their salon is performing against other salons.
 
-Link to the 4Hair Salon Google worksheet [here](https://docs.google.com/spreadsheets/d/1UmPvDmD13JLirGdsC2yTkNROgu0nCe9sanfPp3KKsbw/edit#gid=2144739599)
+Link to The Blueook Google worksheet [here](https://docs.google.com/spreadsheets/d/1_iazxzHMnARZp3ow2q3PlCwY0wfxIekU50Y1wxL0H9Y/edit#gid=0)
 
 <details>
  <summary>Setting Up the Google API</summary>
@@ -140,4 +172,4 @@ To check that your `creds.json` file won't be committed, follow the below steps:
   * W3Schools for zipping the sales and booking data
 * Acknowledgements
   * My mentor Rahul for his ongoing support and feedback
-  * The Slack community
+  * The Slack community(special mention: James Billcliffe)
