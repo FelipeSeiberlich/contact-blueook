@@ -13,11 +13,11 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('blueook')
-ALLOWED_NAME_CHARACTERS=['a','b','c','d','e','f','g','h','i','j',
-    'k','l','m','n','o','p','q','r','s','t','u','v','w','x','y',
-    'z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
-    'O','P','Q','R','S','T','U','V','W','X','Y','Z',' ']
-ALLOWED_PHONE_CHARACTERS=['1','2','3','4','5','6','7','8','9','0',' ']
+ALLOWED_NAME_CHARACTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+    'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+    'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',' ']
+ALLOWED_PHONE_CHARACTERS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', ' ']
 
 panel = """                                                  
               ### #           ##   #                       #   
@@ -30,13 +30,20 @@ print(Fore.BLUE, panel)
 print(Fore.YELLOW + '           *** Welcome to the Smurf collectors Contact Book ***')
 print(Fore.WHITE)
 
+
 def important_message():
+    """
+    This function displays a consent message to the users
+    allowing the program or not to share their contact data with members.
+    If the user consent the program will start.
+    If the user does not consent, the program exit.
+    """
     print('                                 IMPORTANT\n')
     print(' * As this is a public dataset we require your consent to share')
     print('   your contact details with other members of The Blueook Community.\n')
     print(' * You have a choice between sharing your phone number or email. :)\n')
     print(' * Please remember to be polite and respectful to all our members.\n')
-    important = input(Fore.YELLOW + ' ◔  I hereby consent to sharing my contact details on The Blueook system. y/n: \n')
+    important = input(Fore.YELLOW + ' ◔ I hereby consent to sharing my contact details on The Blueook system. y/n: \n')
     print(' ')
     if important == 'y' or important == 'Y':
         print(' ')
@@ -78,9 +85,12 @@ def important_message():
         print(Fore.WHITE)
         main()
 
+
 def get_contact_data():
     """
-    Get name, phone, location and email contact from the user.
+    This function gets the name, phone, location
+    and email contact from the user and place them
+    into a list.
     """
     panel = """                                                  
         ### #           ##   #                       #   
@@ -142,9 +152,11 @@ def get_contact_data():
     print(Fore.WHITE)
     return [name_str, phone_number_str, location_str, email_str]
 
+
 def get_name_data():
     """
-    Get Name and Surname data from the user.
+    This function gets the name data from the user
+    and returns the input question until receives valid data.
     """
     name_str = input(Fore.WHITE + ' ◔  Enter your name here: \n')
     print(' ')
@@ -162,10 +174,13 @@ def get_name_data():
         print(f' * The name {name_str} was added successfully!')
         print(' ')
         print(Fore.WHITE)
-    return name_str    
+    return name_str
+
+
 def get_phone_number():
     """
-    Get Phone number data from the user.
+    This function gets the phone number data from the user
+    and returns the input question until receives valid data.
     """
     contact_phone_number_str = input(Fore.WHITE + ' ◔  Enter your phone number here: \n')
     print(Fore.BLUE)
@@ -181,9 +196,11 @@ def get_phone_number():
         print(f' * The number {contact_phone_number_str} was added successfully!\n')
     return contact_phone_number_str
 
+
 def update_contact_worksheet(data):
     """
-    Update worksheet with data values, add a new row with the list data provided.
+    This function updates the contact worksheet
+    and appends a new row of data.
     """
     house = """
  .::.              
@@ -209,7 +226,12 @@ def update_contact_worksheet(data):
     print(house)
     print(' ')
 
+
 def display_data():
+    """
+    This function gives the option of displaying the other
+    member's contact data.
+    """
     print(Fore.CYAN + '-----------------------------------------------------------------------------------S2')
     display_contact = input(Fore.WHITE + ' ◔  Would you like to display the collectors contact list? y/n: \n')
     print(' ')
@@ -237,7 +259,14 @@ def display_data():
         print(' * See you soon!\n')
         print(Fore.WHITE)
 
+
 def exit_blueook():
+    """
+    This function gives the user the option to exit the program.
+    Differently of the exit function, the exit_blueook function 
+    let the user to decide if there is anything else left to do
+    or simply exit.
+    """
     print(' ')
     print(Fore.CYAN + '-----------------------------------------------------------------------------------S2')
     bye_blueook = input(Fore.WHITE + ' ◔  Would you like to exit The Blueook? y/n: \n')
@@ -267,18 +296,29 @@ def exit_blueook():
         print(Fore.RED + ' * If you want to exit The blueook type "n" or "N" below.\n')
         display_data()
 
+
 def exit_program():
+    """
+    This function exit the system.
+    This function is mostly used in the program when a quick exit is required.
+    """
     exit(0)
 
 
 def main():
+    """
+    Here lies all the program functions.
+    This function serves as the starting point for The Blueook program execution.
+    It controls The Blueook execution by directing the calls to other functions in the program.
+    """
     important_message()
     data = get_contact_data()
     update_contact_worksheet(data)
     display_data()
     exit_blueook()
     exit(0)
-    
+
+
 main()
 
 

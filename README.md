@@ -4,9 +4,9 @@
 This system grants user input and displays recommendations on what should be done to be connected with a large and worldwide community of Smurf's lovers.
 It is a modest system, but provide the users a contact list of other collectors who share the same passion - Smurfs!
 
-pic of the system
+![screenshot](assets/documentation//banner.png)
 
-[The Blueook](https://felipeseibe-contactblue-oh24gileoe5.ws-eu105.gitpod.io/)
+[The Blueook](https://contact-blueook-b9e733172da3.herokuapp.com/)
 
 ## User Story
 
