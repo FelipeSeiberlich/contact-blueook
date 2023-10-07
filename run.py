@@ -125,20 +125,7 @@ def get_contact_data():
     print(Fore.WHITE + '* Enter a single zero "0".\n')
     print(Fore.YELLOW + '> Example: 0\n')
     print(Fore.CYAN + '--------------------------------------------------------------S2')
-    phone_number_str = input(Fore.WHITE + '(◔◡◔) Enter your phone number here: \n')
-    print(' ')
-    print(Fore.BLUE + '*_* Validating...\n')
-    if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
-        print(Fore.RED + '\n* Error: Invalid character. :(\n')
-        print('* Azriel just managed to Blueook himself.')
-        print(Fore.GREEN)
-        print('* You can do it! This time use only numbers. :)')
-        print(Fore.WHITE)
-        get_phone_number()
-    else:
-        print(Fore.GREEN + '* No error. :)')
-        print(f'* The number {phone_number_str} was added successfully!\n')
-        print(Fore.WHITE)
+    phone_number_str = get_phone_number()
     print(Fore.CYAN + '--------------------------------------------------------------S2')    
     print(Fore.WHITE + '^ In which country are you located?\n')
     print(Fore.YELLOW + '> Example: Ireland.\n')
@@ -180,20 +167,21 @@ def get_phone_number():
     """
     Get Phone number data from the user.
     """
-    phone_number_str = input(Fore.WHITE + '^ Enter your phone number here: \n')
+    contact_phone_number_str = input(Fore.WHITE + '^ Enter your phone number here: \n')
     print(Fore.BLUE)
     print('*_* Validating...\n')
-    if any(x not in ALLOWED_PHONE_CHARACTERS for x in phone_number_str):
+    if any(x not in ALLOWED_PHONE_CHARACTERS for x in contact_phone_number_str):
         print(Fore.RED + "* Error: Invalid character, please enter numbers only.")
         print(Fore.WHITE)
-        get_phone_number()
+        contact_phone_number_str = get_phone_number()
         print(' ')
     else:
         print(' ')
         print(Fore.GREEN)
         print("* No error. :)\n")
-        print(f'* The number {phone_number_str} was added successfully!\n')
+        print(f'* The number {contact_phone_number_str} was added successfully!\n')
         print(Fore.WHITE)
+    return contact_phone_number_str
 
 def update_contact_worksheet(data):
     """
