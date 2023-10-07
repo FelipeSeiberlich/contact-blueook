@@ -232,7 +232,7 @@ def display_data():
     This function gives the option of displaying the other
     member's contact data.
     """
-    print(Fore.CYAN + '-----------------------------------------------------------------------------------S2')
+    print(Fore.CYAN + '-------------------------------------------------------------------------S2')
     display_contact = input(Fore.WHITE + ' ◔  Would you like to display the collectors contact list? y/n: \n')
     print(' ')
     if display_contact == 'y' or display_contact == 'Y':
@@ -268,7 +268,7 @@ def exit_blueook():
     or simply exit.
     """
     print(' ')
-    print(Fore.CYAN + '-----------------------------------------------------------------------------------S2')
+    print(Fore.CYAN + '-------------------------------------------------------------------------S2')
     bye_blueook = input(Fore.WHITE + ' ◔  Would you like to exit The Blueook? y/n: \n')
     print(' ')
     if bye_blueook == 'y' or bye_blueook == 'Y':
