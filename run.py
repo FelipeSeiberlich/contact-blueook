@@ -36,7 +36,7 @@ def important_message():
     print('  your contact details with other members of The Blueook Community.\n')
     print('* You have a choice between sharing your phone number or email. :)\n')
     print('* Please remember to be polite and respectful to all our members.\n')
-    important = input(Fore.YELLOW + '(◔◡◔) I hereby consent to sharing my contact details on The Blueook system. y/n: \n')
+    important = input(Fore.YELLOW + '◔◡◔  I hereby consent to sharing my contact details on The Blueook system. y/n: \n')
     print(' ')
     if important == 'y' or important == 'Y':
         print(' ')
@@ -46,7 +46,7 @@ def important_message():
         print('I decided to share only my email and now I am part of this community.')          
         israel = """
 :+**##:                     
-   .  :#=                      
+   .  :#=                         Bye-bye!
        +#.         .          
        .*=        .==.     .  
         ==+=-.    ==*+===+*:  
@@ -118,7 +118,7 @@ def get_contact_data():
     print(Fore.CYAN + '--------------------------------------------------------------S2')
     name_str = get_name_data()
     print(Fore.CYAN + '--------------------------------------------------------------S2')    
-    print(Fore.WHITE + '(◔◡◔) Please enter your Phone Number.')
+    print(Fore.WHITE + '* Please enter your Phone Number.')
     print('* Data must contain only numbers.\n')
     print(Fore.YELLOW + '> Example: 00 353 892516666\n')
     print(Fore.RED + '* If you do not want to share your phone number.')
@@ -127,15 +127,15 @@ def get_contact_data():
     print(Fore.CYAN + '--------------------------------------------------------------S2')
     phone_number_str = get_phone_number()
     print(Fore.CYAN + '--------------------------------------------------------------S2')    
-    print(Fore.WHITE + '^ In which country are you located?\n')
+    print(Fore.WHITE + '* In which country are you located?\n')
     print(Fore.YELLOW + '> Example: Ireland.\n')
-    location_str = input(Fore.WHITE + '^ Enter your location here: \n')
+    location_str = input(Fore.WHITE + '◔◡◔  Enter your location here: \n')
     print(Fore.GREEN)
     print(f'* The location provided is {location_str}.\n')
     print(Fore.CYAN + '--------------------------------------------------------------S2')
-    print(Fore.WHITE + '^ Please enter your email.\n')
+    print(Fore.WHITE + '* Please enter your email.\n')
     print(Fore.YELLOW + '> Example: phil123@gmail.com.\n')
-    email_str = input(Fore.WHITE + '^ Enter your email here: \n')
+    email_str = input(Fore.WHITE + '◔◡◔  Enter your email here: \n')
     print(' ')
     print(Fore.GREEN)
     print(f'* The email provided is {email_str}\n')
@@ -146,7 +146,7 @@ def get_name_data():
     """
     Get Name and Surname data from the user.
     """
-    name_str = input('Enter your name here: \n')
+    name_str = input(Fore.WHITE + '◔◡◔  Enter your name here: \n')
     print(' ')
     print(Fore.BLUE)
     print('*_* Validating...\n')
@@ -167,7 +167,7 @@ def get_phone_number():
     """
     Get Phone number data from the user.
     """
-    contact_phone_number_str = input(Fore.WHITE + '^ Enter your phone number here: \n')
+    contact_phone_number_str = input(Fore.WHITE + '◔◡◔  Enter your phone number here: \n')
     print(Fore.BLUE)
     print('*_* Validating...\n')
     if any(x not in ALLOWED_PHONE_CHARACTERS for x in contact_phone_number_str):
@@ -176,11 +176,9 @@ def get_phone_number():
         contact_phone_number_str = get_phone_number()
         print(' ')
     else:
-        print(' ')
         print(Fore.GREEN)
         print("* No error. :)\n")
         print(f'* The number {contact_phone_number_str} was added successfully!\n')
-        print(Fore.WHITE)
     return contact_phone_number_str
 
 def update_contact_worksheet(data):
@@ -212,8 +210,8 @@ def update_contact_worksheet(data):
     print(' ')
 
 def display_data():
-    print(Fore.CYAN + '--------------------------------------------------------------S2')
-    display_contact = input(Fore.WHITE + '^ Would you like to display the collectors contact list? y/n: \n')
+    print(Fore.CYAN + '-----------------------------------------------------------------------------------S2')
+    display_contact = input(Fore.WHITE + '◔◡◔  Would you like to display the collectors contact list? y/n: \n')
     print(' ')
     if display_contact == 'y' or display_contact == 'Y':
         contact = SHEET.worksheet('contact')
@@ -222,7 +220,7 @@ def display_data():
     else:
         israel = """
 :+**##:                     
-   .  :#=                      
+   .  :#=                        Bye-bye! 
        +#.         .          
        .*=        .==.     .  
         ==+=-.    ==*+===+*:  
@@ -241,13 +239,13 @@ def display_data():
 
 def exit_blueook():
     print(' ')
-    print(Fore.CYAN + '--------------------------------------------------------------S2')
-    bye_blueook = input(Fore.WHITE + '^ Would you like to exit The Blueook? y/n: \n')
+    print(Fore.CYAN + '-----------------------------------------------------------------------------------S2')
+    bye_blueook = input(Fore.WHITE + '◔◡◔  Would you like to exit The Blueook? y/n: \n')
     print(' ')
     if bye_blueook == 'y' or bye_blueook == 'Y':
         israel = """
 :+**##:                     
-   .  :#=                      
+   .  :#=                       Bye-bye!  
        +#.         .          
        .*=        .==.     .  
         ==+=-.    ==*+===+*:  
