@@ -89,7 +89,7 @@ The inputed data is validated and inserted into a list to be transfered to the w
 
 ## Future Features
 
-1. Confirming if user input for location and email are correct.
+1. Confirming if user location and email inputs are correct.
 1. 
 
 ## Testing
