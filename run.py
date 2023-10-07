@@ -4,6 +4,7 @@ import colorama
 from colorama import Fore, Back, Style
 from tabulate import tabulate
 colorama.init()
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -233,7 +234,7 @@ def display_data():
     member's contact data.
     """
     print(Fore.CYAN + '-------------------------------------------------------------------------S2')
-    display_contact = input(Fore.WHITE + ' ◔  Would you like to display the collectors contact list? y/n: \n')
+    display_contact = input(Fore.WHITE + ' Would you like to display the collectors contact list? y/n: \n')
     print(' ')
     if display_contact == 'y' or display_contact == 'Y':
         contact = SHEET.worksheet('contact')
