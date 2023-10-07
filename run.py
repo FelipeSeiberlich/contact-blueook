@@ -116,18 +116,7 @@ def get_contact_data():
     print(Fore.YELLOW)
     print('> Example: Philip Grant.\n')
     print(Fore.CYAN + '--------------------------------------------------------------S2')
-    name_str = input(Fore.WHITE + '(◔◡◔) Enter your name here: \n')
-    print(' ')
-    print(Fore.BLUE + '*_* Validating...\n')
-    if any(x not in ALLOWED_NAME_CHARACTERS for x in name_str):
-        print(Fore.RED +'* Error: invalid character. :(\n')
-        print('* Oooops! I will tell Papa Smurf that you did not follow the instructions.\n')
-        print(Fore.GREEN + '* This time only use letters. :)')
-        print(Fore.WHITE)
-        get_name_data()
-    else:
-        print(Fore.GREEN + '* No error. :)')
-        print(f'* The name {name_str} was added successfully!\n')
+    name_str = get_name_data()
     print(Fore.CYAN + '--------------------------------------------------------------S2')    
     print(Fore.WHITE + '(◔◡◔) Please enter your Phone Number.')
     print('* Data must contain only numbers.\n')
@@ -179,14 +168,14 @@ def get_name_data():
         print('* Oh no! Gargamel is going to catch you.')
         print(Fore.GREEN + '* Use only letters to avoid this.')
         print(Fore.WHITE)
-        get_name_data()
+        name_str = get_name_data()
     else:
         print(Fore.GREEN)
         print("* No error. :)\n")
         print(f'* The name {name_str} was added successfully!')
         print(' ')
         print(Fore.WHITE)
-
+    return name_str    
 def get_phone_number():
     """
     Get Phone number data from the user.
