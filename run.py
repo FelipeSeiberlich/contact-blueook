@@ -44,7 +44,7 @@ def important_message():
     print('   your contact details with other members of The Blueook Community.\n')
     print(' * You have a choice between sharing your phone number or email. :)\n')
     print(' * Please remember to be polite and respectful to all our members.\n')
-    important = input(Fore.YELLOW + ' ◔ I hereby consent to sharing my contact details on The Blueook system. y/n: \n')
+    important = input(Fore.YELLOW + ' ◔  I consent to sharing my contact on The Blueook system. y/n: \n')
     print(' ')
     if important == 'y' or important == 'Y':
         print(' ')
@@ -140,7 +140,7 @@ def get_contact_data():
     print(Fore.CYAN + '--------------------------------------------------------------S2')    
     print(Fore.WHITE + ' * In which country are you located?\n')
     print(Fore.YELLOW + ' > Example: Ireland.\n')
-    location_str = input(Fore.WHITE + ' ◔ Enter your location here: \n')
+    location_str = input(Fore.WHITE + ' ◔  Enter your location here: \n')
     print(Fore.GREEN)
     print(f' * The location provided is {location_str}.\n')
     print(Fore.CYAN + '--------------------------------------------------------------S2')
@@ -222,8 +222,7 @@ def update_contact_worksheet(data):
     print(Fore.BLUE + ' *_* Updating contact worksheet...')
     contact = SHEET.worksheet('contact')
     contact.append_row(data)
-    print(' *_* Contact worksheet updated successfully!\n')
-    print(Fore.WHITE)
+    print(Fore.WHITE + ' *_* Contact worksheet updated successfully!\n')
     print(house)
     print(' ')
 
@@ -296,6 +295,7 @@ def exit_blueook():
         print(Fore.BLUE + ' * If you want to access the contact list one more time type "y" or "Y" below.\n')
         print(Fore.RED + ' * If you want to exit The blueook type "n" or "N" below.\n')
         display_data()
+        exit(0)
 
 
 def exit_program():

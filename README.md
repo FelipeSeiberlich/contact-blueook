@@ -20,7 +20,7 @@ As someone's personal details are considered sensitive data, the program starts 
 
 ![screenshot](assets/documentation//important.png)
 
-If the user do not consent sharing their contact the program exit.
+* If the user do not consent sharing their contact the program exit.
 
 ![screenshot](assets/documentation//no_consent.png)
  
@@ -90,7 +90,7 @@ The inputed data is validated and inserted into a list to be transfered to the w
 ## Future Features
 
 1. Confirming if user location and email inputs are correct.
-1. 
+1. Link the program to a website.
 
 ## Testing
 
@@ -98,7 +98,17 @@ To ensure there were no bugs in the interface and that the system could handle i
 
 ## Validator testing
 
+Passed data through Online IDE and no major errors were found.
+
+Heroku works correctly as planned across Google Chrome, Safari, Microsoft Edge and Mozilla Firefox.
+
+For user experience purposes, it's best to run the program on a tablet, laptop or desktop, as on mobile it may be too small to read the instructions and recommendations.
+
 ## Bugs and Solutions
+
+First bug found was when the invalid data was being transfered into the spreadsheet. Bug was fixed returning the right data only into the spreadsheet.
+
+Second bug was related to the table measurents that was overllaping into each other. The dimensions were fixed and table fit into the program width.
 
 There are no remaining bugs that I am aware of.
 
@@ -167,9 +177,11 @@ To check that your `creds.json` file won't be committed, follow the below steps:
 
 ## Credits
 
-* Code
-  * StackOverflow for the dictionary
-  * W3Schools for zipping the sales and booking data
-* Acknowledgements
-  * My mentor Rahul for his ongoing support and feedback
-  * The Slack community(special mention: James Billcliffe)
+* I would like to thank my Code Institute mentor, Rahul for his support throughout the development of this project.
+
+* I would like to thank the Code Institute Slack community for the moral support; it kept me going during periods of self doubt.
+
+* Special mention: James Billcliffe.
+
+* I would like to thank the student care agent (Kim), for all the support and for helping me when I needed the most.
+	• I would like to thank LeanneCodes for inspire me in writting this README document.
