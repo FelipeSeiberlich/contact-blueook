@@ -51,7 +51,7 @@ def important_message():
 
     elif important == 'n' or important == 'N':
         print(Fore.WHITE + ' Hi! My name is Azriel and I am a Blueook member.')
-        print(' I decided to share only my email and now I am part of this community.')          
+        print(' Pity you are leaving.')          
         israel = """
 :+**##:                     
    .  :#=                         Bye-bye!
@@ -67,7 +67,7 @@ def important_message():
         print(Fore.RED)
         print(israel)
         print(Fore.WHITE)
-        print(' * We appreciated your visit.')
+        print(' * Thanks for your visit.')
         print(' * We hope to see you again!\n')
         exit_program()
     else:
@@ -243,7 +243,7 @@ def display_data():
     else:
         israel = """
 :+**##:                     
-   .  :#=                        Bye-bye! 
+   .  :#=                        
        +#.         .          
        .*=        .==.     .  
         ==+=-.    ==*+===+*:  
