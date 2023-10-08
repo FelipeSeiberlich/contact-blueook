@@ -44,7 +44,7 @@ def important_message():
     print('   your contact details with other members of The Blueook Community.\n')
     print(' * You have a choice between sharing your phone number or email. :)\n')
     print(' * Please remember to be polite and respectful to all our members.\n')
-    important = input(Fore.YELLOW + ' ◔  I consent to sharing my contact on The Blueook system. y/n: \n')
+    important = input(Fore.YELLOW + '  I consent to sharing my contact details on The Blueook system. y/n: \n')
     print(' ')
     if important == 'y' or important == 'Y':
         print(' ')
@@ -140,13 +140,13 @@ def get_contact_data():
     print(Fore.CYAN + '--------------------------------------------------------------S2')    
     print(Fore.WHITE + ' * In which country are you located?\n')
     print(Fore.YELLOW + ' > Example: Ireland.\n')
-    location_str = input(Fore.WHITE + ' ◔  Enter your location here: \n')
+    location_str = input(Fore.WHITE + '  Enter your location here: \n')
     print(Fore.GREEN)
     print(f' * The location provided is {location_str}.\n')
     print(Fore.CYAN + '--------------------------------------------------------------S2')
     print(Fore.WHITE + ' * Please enter your email.\n')
     print(Fore.YELLOW + ' > Example: phil123@gmail.com.\n')
-    email_str = input(Fore.WHITE + ' ◔  Enter your email here: \n')
+    email_str = input(Fore.WHITE + '  Enter your email here: \n')
     print(' ')
     print(Fore.GREEN)
     print(f' * The email provided is {email_str}\n')
@@ -159,7 +159,7 @@ def get_name_data():
     This function gets the name data from the user
     and returns the input question until receives valid data.
     """
-    name_str = input(Fore.WHITE + ' ◔  Enter your name here: \n')
+    name_str = input(Fore.WHITE + '  Enter your name here: \n')
     print(' ')
     print(Fore.BLUE)
     print(' *_* Validating...\n')
@@ -183,7 +183,7 @@ def get_phone_number():
     This function gets the phone number data from the user
     and returns the input question until receives valid data.
     """
-    contact_phone_number_str = input(Fore.WHITE + ' ◔  Enter your phone number here: \n')
+    contact_phone_number_str = input(Fore.WHITE + '  Enter your phone number here: \n')
     print(Fore.BLUE)
     print(' *_* Validating...\n')
     if any(x not in ALLOWED_PHONE_CHARACTERS for x in contact_phone_number_str):
@@ -222,7 +222,8 @@ def update_contact_worksheet(data):
     print(Fore.BLUE + ' *_* Updating contact worksheet...')
     contact = SHEET.worksheet('contact')
     contact.append_row(data)
-    print(Fore.WHITE + ' *_* Contact worksheet updated successfully!\n')
+    print(' *_* Contact worksheet updated successfully!\n')
+    print(Fore.WHITE)
     print(house)
     print(' ')
 
@@ -269,7 +270,7 @@ def exit_blueook():
     """
     print(' ')
     print(Fore.CYAN + '-------------------------------------------------------------------------S2')
-    bye_blueook = input(Fore.WHITE + ' ◔  Would you like to exit The Blueook? y/n: \n')
+    bye_blueook = input(Fore.WHITE + '  Would you like to exit The Blueook? y/n: \n')
     print(' ')
     if bye_blueook == 'y' or bye_blueook == 'Y':
         israel = """
